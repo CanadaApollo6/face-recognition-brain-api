@@ -21,6 +21,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use((req, res, next) => {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://canadaapollo6.github.io/face-recognition-brain/"
+  );
+  next();
+});
+
 app.get("/", (req, res) => {
   res.send("The server is running");
 });
