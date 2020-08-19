@@ -8,6 +8,7 @@ const { handleSignIn } = require("./controllers/signin");
 const { getProfile } = require("./controllers/profile");
 const { updateEntries } = require("./controllers/entries");
 const { handleApiCall } = require("./controllers/clarifai");
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 const db = knex({
   client: "pg",
